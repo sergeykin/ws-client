@@ -70,7 +70,7 @@
             <plugin>
                 <groupId>org.jvnet.jaxb2.maven2</groupId>
                 <artifactId>maven-jaxb2-plugin</artifactId>
-                <version>0.13.3</version>
+                <version>0.11.0</version>
                 <executions>
                     <execution>
                         <goals>
@@ -81,11 +81,15 @@
                 <configuration>
                     <schemaLanguage>WSDL</schemaLanguage>
                     <generatePackage>wsdl</generatePackage>
+                    <generateDirectory>${project.basedir}/src/main/java</generateDirectory>
+                    <outputDirectory>${project.basedir}/src/main/java</outputDirectory>
+                    <clearOutputDir>false</clearOutputDir>
                     <schemas>
                         <schema>
                             <url>http://localhost:8081/ws/countries.wsdl</url>
                         </schema>
                     </schemas>
+                    <episode>false</episode>
                 </configuration>
             </plugin>
         </plugins>
